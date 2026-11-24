@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pre-Submission Eligibility Screening Tool — Common Fund for Commodities Call for Proposals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141a1f; --body:#2f3942; --soft:#5e6a76; --faint:#8794a1;
+  --rule:#d5dbe1; --rule-l:#e7ebef; --paper:#ffffff; --bg:#f4f5f6;
+  --met:#1f5c3d; --notmet:#8c1c1c; --review:#8a5c00; --accent:#1a4a73;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--body);
+  font-family:'Source Serif 4',Georgia,serif;font-size:16.5px;line-height:1.66;
+  -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:820px;margin:0 auto;background:var(--paper);border-left:1px solid var(--rule);border-right:1px solid var(--rule);min-height:100vh}
+.pad{padding:0 56px}
+@media(max-width:700px){.pad{padding:0 22px}}
+
+/* ---------- typography ---------- */
+h1,h2,h3,h4{color:var(--ink);margin:0;font-weight:600;line-height:1.3}
+h1{font-size:1.62rem;letter-spacing:-.012em}
+h2{font-size:1.12rem;letter-spacing:-.004em}
+h3{font-size:.98rem}
+p{margin:0 0 .8em}
+p:last-child{margin-bottom:0}
+.ui{font-family:'IBM Plex Sans',system-ui,sans-serif}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.lede{font-size:1.02rem;color:var(--soft)}
+.small{font-size:14px}
+.eyebrow{
+  font-family:'IBM Plex Sans',sans-serif;font-size:10.5px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--faint)
+}
+hr{border:0;border-top:1px solid var(--rule);margin:0}
+hr.thin{border-top:1px solid var(--rule-l)}
+
+/* ---------- masthead ---------- */
+.mast{padding:40px 0 26px;border-bottom:2px solid var(--ink)}
+.mast .eyebrow{margin-bottom:14px}
+.mast h1{margin-bottom:6px}
+.mast .org{font-size:1.02rem;color:var(--soft);margin:0}
+.ctrl{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:0;border-top:1px solid var(--rule);margin-top:26px
+}
+.ctrl div{padding:12px 16px 12px 0;border-right:1px solid var(--rule-l)}
+.ctrl div:last-child{border-right:0}
+.ctrl dt{font-family:'IBM Plex Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+.ctrl dd{margin:0;font-size:14.5px;color:var(--ink)}
+
+/* ---------- sections ---------- */
+section.doc{padding:30px 0;border-bottom:1px solid var(--rule-l)}
+.secno{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint);
+  display:block;margin-bottom:3px
+}
+section.doc > h2{margin-bottom:10px}
+
+/* ---------- notices ---------- */
+.notice{border-left:2px solid var(--ink);padding:2px 0 2px 18px;margin:18px 0}
+.notice .eyebrow{display:block;margin-bottom:5px}
+.notice p{font-size:15px}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0 0}
+caption{text-align:left;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding-bottom:8px}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--rule-l);vertical-align:top}
+thead th{border-bottom:1px solid var(--ink);font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);padding-bottom:7px}
+td.id{font-family:'IBM Plex Mono',monospace;font-size:13px;white-space:nowrap;color:var(--ink);width:72px}
+td.fig{font-family:'IBM Plex Mono',monospace;font-size:13.5px;white-space:nowrap}
+tr.on td{background:#f7f9fb}
+tr.on td:first-child{box-shadow:inset 2px 0 0 var(--accent)}
+
+/* ---------- form ---------- */
+form{margin:0}
+fieldset{border:0;padding:0;margin:0 0 26px}
+fieldset:last-of-type{margin-bottom:0}
+legend{padding:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:1.02rem;color:var(--ink);margin-bottom:4px}
+.q{font-size:14.5px;color:var(--soft);margin:0 0 14px}
+label.lab{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:500;color:var(--ink);margin:0 0 5px;letter-spacing:.005em}
+input[type=text],input[type=number],select{
+  width:100%;padding:9px 11px;border:1px solid #b9c2cb;border-radius:2px;
+  font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;color:var(--ink);background:#fff
+}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#5e6a76 50%),linear-gradient(135deg,#5e6a76 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+input:focus,select:focus{outline:1px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.row{display:flex;gap:16px;flex-wrap:wrap}
+.row>div{flex:1 1 210px}
+.field{margin-bottom:16px}
+.field:last-child{margin-bottom:0}
+
+.opts{border-top:1px solid var(--rule-l)}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--rule-l);cursor:pointer}
+.opt:hover{background:#fafbfc}
+.opt input{margin:4px 0 0;flex:none;width:14px;height:14px;accent-color:var(--accent)}
+.opt .ot{font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--ink);line-height:1.5}
+.opt .oc{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--faint);flex:none;width:62px;padding-top:2px}
+.opt .od{display:block;font-size:13px;color:var(--soft);margin-top:2px;font-family:'Source Serif 4',serif}
+.opt.sel{background:#f6f8fa}
+.opt.sel .ot{font-weight:500}
+
+/* ---------- progress ---------- */
+.prog{display:flex;align-items:center;gap:0;border-bottom:1px solid var(--rule);font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.prog span{padding:11px 0;margin-right:22px;color:var(--faint);white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px}
+.prog span.now{color:var(--ink);font-weight:600;border-bottom-color:var(--ink)}
+.prog span.done{color:var(--soft)}
+@media(max-width:700px){.prog{overflow-x:auto}.prog span{margin-right:16px;font-size:10px}}
+
+/* ---------- buttons ---------- */
+.nav{display:flex;gap:10px;justify-content:space-between;margin-top:28px;padding-top:20px;border-top:1px solid var(--rule-l);flex-wrap:wrap}
+button{font-family:'IBM Plex Sans',sans-serif;cursor:pointer;border-radius:2px;border:1px solid transparent}
+.b1{background:var(--ink);color:#fff;padding:10px 24px;font-weight:500;font-size:14px;letter-spacing:.01em}
+.b1:hover{background:#000}
+.b2{background:#fff;color:var(--body);border-color:#b9c2cb;padding:10px 20px;font-weight:400;font-size:14px}
+.b2:hover{background:#f6f8fa}
+.b3{background:#fff;color:var(--body);border-color:#b9c2cb;padding:6px 13px;font-size:12.5px}
+.b3:hover{background:#f6f8fa}
+
+/* ---------- determination ---------- */
+.det{border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:22px 0 20px;margin-bottom:0}
+.det .eyebrow{display:block;margin-bottom:8px}
+.det h2{font-size:1.3rem;margin-bottom:8px;letter-spacing:-.008em}
+.det .st{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.det.m .st{color:var(--met)} .det.r .st{color:var(--review)} .det.n .st{color:var(--notmet)}
+.det p{font-size:15.5px;margin-bottom:0}
+.tally{display:flex;gap:34px;margin-top:18px;padding-top:16px;border-top:1px solid var(--rule-l);flex-wrap:wrap}
+.tally div{min-width:0}
+.tally dt{font-family:'IBM Plex Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin-bottom:2px}
+.tally dd{margin:0;font-family:'IBM Plex Mono',monospace;font-size:20px;color:var(--ink);line-height:1.2}
+
+/* ---------- findings ---------- */
+.find{border-top:1px solid var(--ink)}
+.f{display:grid;grid-template-columns:72px 1fr 92px;gap:0 14px;padding:14px 0;border-bottom:1px solid var(--rule-l)}
+.f .fid{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--soft);padding-top:1px}
+.f .fh{font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.f .fd{font-size:14.5px;margin:0}
+.f .fb{font-size:13px;color:var(--faint);margin:5px 0 0}
+.f .fs{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;text-align:right;padding-top:2px;white-space:nowrap
+}
+.fs.met{color:var(--met)} .fs.notmet{color:var(--notmet)} .fs.review{color:var(--review)} .fs.ns{color:var(--faint)}
+@media(max-width:700px){
+  .f{grid-template-columns:62px 1fr;gap:0 10px}
+  .f .fs{grid-column:2;text-align:left;padding-top:6px}
+}
+
+/* ---------- record ---------- */
+.rec{
+  border:1px solid var(--rule);background:#fcfcfd;padding:20px 22px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.8;
+  white-space:pre-wrap;word-break:break-word;overflow-x:auto;margin:14px 0 0;color:var(--ink)
+}
+.reccap{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-top:14px}
+
+/* ---------- lists ---------- */
+ol.num,ul.bul{padding-left:22px;margin:10px 0 0}
+ol.num li,ul.bul li{margin-bottom:6px;font-size:15px}
+dl.defs{margin:12px 0 0}
+dl.defs dt{font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:600;color:var(--ink);margin-top:12px}
+dl.defs dd{margin:2px 0 0;font-size:14.5px}
+.refs{list-style:none;padding:0;margin:12px 0 0;counter-reset:r}
+.refs li{counter-increment:r;padding:8px 0 8px 30px;border-bottom:1px solid var(--rule-l);font-size:14px;position:relative}
+.refs li:before{content:"[" counter(r) "]";position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint)}
+.refs li:last-child{border-bottom:0}
+
+footer{padding:30px 0 50px;font-size:13.5px;color:var(--faint)}
+footer p{margin-bottom:.6em}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<div class="pad">
+  <div class="mast">
+    <span class="eyebrow">Proof of concept &middot; Document PSE-1.0</span>
+    <h1>Pre-Submission Eligibility Screening Tool</h1>
+    <p class="org">Common Fund for Commodities &mdash; Call for Proposals</p>
+    <dl class="ctrl ui">
+      <div><dt>Version</dt><dd>1.0</dd></div>
+      <div><dt>Date</dt><dd>23 November 2026</dd></div>
+      <div><dt>Prepared by</dt><dd>Zuhair Mahmud</dd></div>
+      <div><dt>Rules current as at</dt><dd>23 November 2026</dd></div>
+    </dl>
+  </div>
+</div>
+
+<div class="pad">
+  <section class="doc">
+    <span class="secno">1</span>
+    <h2>Status and basis of preparation</h2>
+    <p class="lede">This is an independent proof of concept. It was prepared by the author named above and is not affiliated with, endorsed by, commissioned by or operated by the Common Fund for Commodities. It issues no decision on the CFC's behalf.</p>
+    <p>The screening logic is derived solely from documents the CFC publishes: the Call for Proposals page and its frequently asked questions, the Member States list, the Call for Proposals application form including its supporting document checklist at Section 8.1, and the CFC Exclusion List as annexed to the Sustainability Policy. Those sources are listed at Section 7. No non-public information was used, and no rule has been inferred where the published sources are silent.</p>
+    <p>The 29th Call for Proposals closed on 1 October 2026 and the 30th Call has been announced as forthcoming. Criteria are therefore stated as published for the most recent closed round, and would require confirmation against the 30th Call once its terms are issued.</p>
+    <div class="notice">
+      <span class="eyebrow">Scope</span>
+      <p>Eligibility screening only. A determination that a proposal meets the published eligibility criteria is not an indication of approval. Commercial viability, impact, credit risk, and social and environmental performance are assessed separately through due diligence and the appraisal of the Consultative Committee and the Executive Board.</p>
+    </div>
+  </section>
+
+  <section class="doc">
+    <span class="secno">2</span>
+    <h2>Purpose</h2>
+    <p>The CFC's published materials indicate deal flow in excess of 400 loan requests a year, with over 500 applications received in a peak year. In 2025, twenty-one projects were approved, representing USD 161.3 million in project value of which USD 21.02 million was financed directly by the CFC. The published calendar for an open call allocates approximately two months to screening by the Secretariat for completeness and basic criteria before proposals are submitted to the Consultative Committee.</p>
+    <p>A substantial share of that screening resolves against rules that are fixed and published in advance: the location of implementation, the length of the applicant's track record, the fit of the activity with the mandate, the Exclusion List, the size of the request against the applicable ceiling, the co-financing requirement, and the Section 8.1 document set. Each of these can be determined before an applicant assembles a dossier.</p>
+    <p>This tool applies those rules at the applicant's end. The intended effect is a reduction in the volume of ineligible applications reaching the Secretariat, rather than faster processing of the same volume, together with a clear and immediate answer for applicants who would otherwise wait for a decision they will not receive. Each screening also produces a structured record suitable for the file, set out at Section 6.</p>
+  </section>
+
+  <section class="doc">
+    <span class="secno">3</span>
+    <h2>Rule register</h2>
+    <p>Twelve criteria are encoded. Each carries a reference used throughout the findings at Section 5, so that any determination can be reconstructed against the source document from which the rule is drawn.</p>
+    <table>
+      <caption>Table 1 &mdash; Encoded criteria</caption>
+      <thead><tr><th>Ref</th><th>Criterion</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td class="id">ELG-01</td><td>Activities financed by the CFC are implemented in a Member State</td><td>Member States list; Call for Proposals FAQ</td></tr>
+        <tr><td class="id">ELG-02</td><td>Applicant domicile, where outside the membership</td><td>Call for Proposals FAQ</td></tr>
+        <tr><td class="id">TRK-01</td><td>Track record of at least three years; start-ups not financed</td><td>Call for Proposals FAQ</td></tr>
+        <tr><td class="id">TRK-02</td><td>Audited financial statements for the latest three financial years</td><td>Application form, Section 8.1</td></tr>
+        <tr><td class="id">MAN-01</td><td>Activity falls within the mandate, excluding research, humanitarian, educational and medical purposes</td><td>Call for Proposals FAQ</td></tr>
+        <tr><td class="id">MAN-02</td><td>Activity is positioned in a commodity or agricultural value chain</td><td>Call for Proposals; application form</td></tr>
+        <tr><td class="id">EXC-01</td><td>Proposal does not engage any of the eleven items on the Exclusion List</td><td>CFC Exclusion List; Sustainability Policy, Annex I</td></tr>
+        <tr><td class="id">FIN-01</td><td>Amount requested falls within the applicable ceiling and approval track</td><td>Call for Proposals FAQ; application form instrument table</td></tr>
+        <tr><td class="id">FIN-02</td><td>Request is matched by at least an equal amount of co-financing</td><td>Application form</td></tr>
+        <tr><td class="id">FIN-03</td><td>Instrument sought is available to the applicant's organisation type</td><td>Application form instrument table</td></tr>
+        <tr><td class="id">DOC-01</td><td>Section 8.1 required documents are available</td><td>Application form, Section 8.1</td></tr>
+        <tr><td class="id">ADM-01</td><td>Application form and financial statements can be submitted in English</td><td>Call for Proposals</td></tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<div class="pad"><div class="prog ui" id="prog"></div></div>
+
+<div class="pad">
+<form id="form" novalidate>
+
+  <section class="doc step" data-step="0">
+    <span class="secno">4.1</span>
+    <h2>Location of activities</h2>
+    <fieldset>
+      <legend class="hide">Location</legend>
+      <p class="q">CFC financing is available in respect of its Member States. An organisation registered in a non-member country may apply, provided that all activities financed by the CFC are implemented in a Member State. <span class="mono small">ELG-01, ELG-02</span></p>
+      <div class="field">
+        <label class="lab" for="implCountry">Country in which CFC-financed activities will be implemented</label>
+        <select id="implCountry"><option value="">Select</option></select>
+      </div>
+      <div class="field">
+        <label class="lab" for="domCountry">Country in which the applicant organisation is registered</label>
+        <select id="domCountry"><option value="">Select</option></select>
+      </div>
+    </fieldset>
+    <div class="nav"><span></span><button type="button" class="b1" data-go="1">Continue</button></div>
+  </section>
+
+  <section class="doc step hide" data-step="1">
+    <span class="secno">4.2</span>
+    <h2>Applicant standing</h2>
+    <fieldset>
+      <legend class="hide">Applicant</legend>
+      <p class="q">Start-up companies are not financed. Eligible proposals must demonstrate a track record of at least three years, addressing substantive as well as financial matters, evidenced by audited financial statements. <span class="mono small">TRK-01, TRK-02</span></p>
+      <div class="field">
+        <label class="lab" for="orgType">Organisation type</label>
+        <select id="orgType">
+          <option value="">Select</option>
+          <option>Private company (SME)</option>
+          <option>Cooperative</option>
+          <option>Social enterprise</option>
+          <option>Investment fund</option>
+          <option>Financial institution</option>
+          <option>Non-governmental organisation</option>
+          <option>Governmental organisation</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label class="lab" for="years">Completed years of operation</label>
+          <input type="number" id="years" min="0" max="200" step="1" placeholder="Years">
+        </div>
+        <div class="field">
+          <label class="lab" for="audited">Audited financial statements, latest three financial years</label>
+          <select id="audited">
+            <option value="">Select</option>
+            <option value="yes">Available for all three years</option>
+            <option value="partial">Available for one or two years</option>
+            <option value="no">Not available</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+    <div class="nav"><button type="button" class="b2" data-go="0">Back</button><button type="button" class="b1" data-go="2">Continue</button></div>
+  </section>
+
+  <section class="doc step hide" data-step="2">
+    <span class="secno">4.3</span>
+    <h2>Mandate and Exclusion List</h2>
+    <fieldset>
+      <legend>Mandate</legend>
+      <p class="q">The purpose of the CFC is to advance development in commodity-dependent developing countries. Matters addressed by other international organisations, including research, humanitarian aid, educational and medical activities, fall outside the mandate. <span class="mono small">MAN-01, MAN-02</span></p>
+      <div class="field">
+        <label class="lab" for="valueChain">Position of the project in the value chain</label>
+        <select id="valueChain">
+          <option value="">Select</option>
+          <option value="yes">Production, processing, storage, logistics, inputs or trade of a commodity</option>
+          <option value="finance">Provision of finance or inputs to commodity value chain actors</option>
+          <option value="no">Not positioned in a commodity or agricultural value chain</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="lab">Primary purpose of the project, where it falls within any of the following</label>
+        <div class="opts" id="mandate">
+          <label class="opt"><input type="checkbox" value="research"><span class="oc">MAN-01a</span><span class="ot">Research<span class="od">Scientific or academic research as the principal activity</span></span></label>
+          <label class="opt"><input type="checkbox" value="humanitarian aid"><span class="oc">MAN-01b</span><span class="ot">Humanitarian aid<span class="od">Relief or emergency response</span></span></label>
+          <label class="opt"><input type="checkbox" value="education"><span class="oc">MAN-01c</span><span class="ot">Education<span class="od">Provision of schooling or training as the principal purpose</span></span></label>
+          <label class="opt"><input type="checkbox" value="medical activity"><span class="oc">MAN-01d</span><span class="ot">Medical<span class="od">Delivery of healthcare or medical services</span></span></label>
+          <label class="opt"><input type="checkbox" value="none" id="mandateNone"><span class="oc">&mdash;</span><span class="ot">None of the above<span class="od">Commercial activity within a commodity value chain</span></span></label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Exclusion List</legend>
+      <p class="q">The CFC maintains an Exclusion List, presented in a format consistent with the IFC Exclusion List, defining activities that do not receive financial support. Items 7 to 11 are applied additionally by financial intermediaries supported by the CFC. A reasonableness test is available where a project would have significant development impact but the circumstances of the country require adjustment. <span class="mono small">EXC-01</span></p>
+      <div class="opts" id="excl">
+        <label class="opt"><input type="checkbox" value="products illegal under host country law or international convention"><span class="oc">EXC-01.1</span><span class="ot">Products or activities illegal under host country law or international convention, or subject to international bans<span class="od">Including certain pharmaceuticals, pesticides and herbicides, ozone-depleting substances, PCBs, and wildlife or products regulated under CITES</span></span></label>
+        <label class="opt"><input type="checkbox" value="weapons or munitions"><span class="oc">EXC-01.2</span><span class="ot">Weapons or munitions</span></label>
+        <label class="opt"><input type="checkbox" value="gambling, casinos or equivalent enterprises"><span class="oc">EXC-01.3</span><span class="ot">Gambling, casinos or equivalent enterprises</span></label>
+        <label class="opt"><input type="checkbox" value="radioactive materials"><span class="oc">EXC-01.4</span><span class="ot">Radioactive materials<span class="od">Exceptions apply for medical and measurement equipment, and where the source is trivial or adequately shielded</span></span></label>
+        <label class="opt"><input type="checkbox" value="unbonded asbestos fibres"><span class="oc">EXC-01.5</span><span class="ot">Unbonded asbestos fibres or other recognised public health hazards<span class="od">Bonded asbestos cement sheeting below 20 per cent asbestos content is excepted</span></span></label>
+        <label class="opt"><input type="checkbox" value="unlawful exploitation of natural resources"><span class="oc">EXC-01.6</span><span class="ot">Exploitation of natural resources contrary to national or international law<span class="od">Including drift net fishing with nets exceeding 2.5 kilometres</span></span></label>
+        <label class="opt"><input type="checkbox" value="forced labour or harmful child labour"><span class="oc">EXC-01.7</span><span class="ot">Forced or exploitative labour, or harmful child labour</span></label>
+        <label class="opt"><input type="checkbox" value="commercial logging in primary tropical moist forest"><span class="oc">EXC-01.8</span><span class="ot">Commercial logging in primary tropical moist forest</span></label>
+        <label class="opt"><input type="checkbox" value="forestry products not from sustainably managed forests"><span class="oc">EXC-01.9</span><span class="ot">Wood or forestry products not sourced from sustainably managed forests</span></label>
+        <label class="opt"><input type="checkbox" value="significant volumes of hazardous chemicals"><span class="oc">EXC-01.10</span><span class="ot">Significant volumes of hazardous chemicals, or their use at commercial scale<span class="od">Including gasoline, kerosene and other petroleum products</span></span></label>
+        <label class="opt"><input type="checkbox" value="activity on Indigenous lands without documented consent"><span class="oc">EXC-01.11</span><span class="ot">Activity affecting lands owned or claimed by Indigenous Peoples absent full documented consent</span></label>
+        <label class="opt"><input type="checkbox" value="none" id="exclNone"><span class="oc">&mdash;</span><span class="ot">None of the above applies</span></label>
+      </div>
+    </fieldset>
+    <div class="nav"><button type="button" class="b2" data-go="1">Back</button><button type="button" class="b1" data-go="3">Continue</button></div>
+  </section>
+
+  <section class="doc step hide" data-step="3">
+    <span class="secno">4.4</span>
+    <h2>Financing</h2>
+    <fieldset>
+      <legend class="hide">Financing</legend>
+      <p class="q">The CFC finances projects through loans and other debt instruments. The published maximum is USD 1.5 million for regular projects and USD 300,000 under the Fast-Track procedure, with flexibility indicated for projects of higher impact supported by a sound case of finance. The amount requested should be matched by at least an equal amount of co-financing. <span class="mono small">FIN-01, FIN-02, FIN-03</span></p>
+      <div class="row">
+        <div class="field">
+          <label class="lab" for="askAmt">CFC financing requested, USD</label>
+          <input type="number" id="askAmt" min="0" step="1000" placeholder="Amount">
+        </div>
+        <div class="field">
+          <label class="lab" for="totalAmt">Total project or investment cost, USD</label>
+          <input type="number" id="totalAmt" min="0" step="1000" placeholder="Amount">
+        </div>
+      </div>
+      <div class="field">
+        <label class="lab" for="instrument">Instrument sought</label>
+        <select id="instrument">
+          <option value="">Select</option>
+          <option value="trade">Trade finance</option>
+          <option value="wc">Working capital</option>
+          <option value="term">Term loan</option>
+          <option value="equity">Equity, investment funds only</option>
+          <option value="dib">Development Impact Bond</option>
+          <option value="unsure">Not yet determined</option>
+        </select>
+      </div>
+    </fieldset>
+    <div class="nav"><button type="button" class="b2" data-go="2">Back</button><button type="button" class="b1" data-go="4">Continue</button></div>
+  </section>
+
+  <section class="doc step hide" data-step="4">
+    <span class="secno">4.5</span>
+    <h2>Supporting documents</h2>
+    <fieldset>
+      <legend>Required, Section 8.1</legend>
+      <p class="q">An application form submitted without the documents listed at Section 8.1 is incomplete. <span class="mono small">DOC-01</span></p>
+      <div class="opts" id="req">
+        <label class="opt"><input type="checkbox" value="Audited financial statements, latest three financial years"><span class="oc">8.1.1</span><span class="ot">Audited financial statements, latest three financial years</span></label>
+        <label class="opt"><input type="checkbox" value="Financial projections including balance sheet and profit and loss forecast"><span class="oc">8.1.2</span><span class="ot">Financial projections including balance sheet and profit and loss forecast</span></label>
+        <label class="opt"><input type="checkbox" value="Impact indicators on the CFC template"><span class="oc">8.1.3</span><span class="ot">Impact indicators, completed on the CFC template</span></label>
+        <label class="opt"><input type="checkbox" value="Company registration documents"><span class="oc">8.1.4</span><span class="ot">Company registration documents</span></label>
+        <label class="opt"><input type="checkbox" value="Legal ownership chart for group entities"><span class="oc">8.1.5</span><span class="ot">Legal ownership chart for all entities of the group<span class="od">Where the applicant comprises several legal entities</span></span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Recommended, Section 8.2</legend>
+      <p class="q">Not mandatory at the application stage. Recorded for completeness.</p>
+      <div class="opts" id="rec">
+        <label class="opt"><input type="checkbox" value="Business plan"><span class="oc">8.2.1</span><span class="ot">Business plan</span></label>
+        <label class="opt"><input type="checkbox" value="Management or organisation chart"><span class="oc">8.2.2</span><span class="ot">Management or organisation chart</span></label>
+        <label class="opt"><input type="checkbox" value="Key staff resumes"><span class="oc">8.2.3</span><span class="ot">Key staff resumes</span></label>
+        <label class="opt"><input type="checkbox" value="Articles of Association"><span class="oc">8.2.4</span><span class="ot">Articles of Association</span></label>
+        <label class="opt"><input type="checkbox" value="Environmental and Social Impact Assessment"><span class="oc">8.2.5</span><span class="ot">Environmental and Social Impact Assessment</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="hide">Language</legend>
+      <div class="field">
+        <label class="lab" for="english">Application form and Balance Sheet and Income Statement can be submitted in English <span class="mono">ADM-01</span></label>
+        <select id="english">
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </fieldset>
+    <div class="nav"><button type="button" class="b2" data-go="3">Back</button><button type="button" class="b1" id="runBtn">Produce determination</button></div>
+  </section>
+
+  <div class="step hide" data-step="5">
+    <section class="doc" style="border-bottom:0;padding-bottom:12px">
+      <span class="secno">5</span>
+      <h2>Determination</h2>
+      <div id="det"></div>
+    </section>
+
+    <section class="doc">
+      <span class="secno">5.1</span>
+      <h2>Findings against the rule register</h2>
+      <p class="q" style="margin-bottom:0">Each criterion is reported with the reference assigned at Table 1 and the source from which it is drawn.</p>
+      <div class="find" id="find"></div>
+    </section>
+
+    <section class="doc" id="instrSec"></section>
+
+    <section class="doc">
+      <span class="secno">6</span>
+      <h2>Screening record</h2>
+      <p>The record below is the output intended for the Secretariat, in place of an unscreened application. It carries a reference, the time of screening, the criteria resolved, and the disposition.</p>
+      <div class="reccap">
+        <span class="eyebrow">Record PSE-R</span>
+        <button type="button" class="b3" id="copyBtn">Copy record</button>
+      </div>
+      <pre class="rec" id="record"></pre>
+    </section>
+
+    <div class="nav">
+      <button type="button" class="b2" data-go="4">Back</button>
+      <button type="button" class="b2" id="resetBtn">New screening</button>
+    </div>
+  </div>
+
+</form>
+</div>
+
+<div class="pad">
+  <section class="doc">
+    <span class="secno">7</span>
+    <h2>Sources</h2>
+    <ol class="refs">
+      <li>Common Fund for Commodities, <em>Call for Proposals</em>, including frequently asked questions on eligibility, track record, mandate and maximum financing.</li>
+      <li>Common Fund for Commodities, <em>Member States</em>, listing 101 Member States and 9 institutional members.</li>
+      <li>Common Fund for Commodities, <em>Call for Proposals application form</em>, including the instrument table and the supporting document checklist at Sections 8.1 and 8.2.</li>
+      <li>Common Fund for Commodities, <em>Exclusion List</em>, as annexed to the Sustainability Policy of the CFC.</li>
+      <li>Common Fund for Commodities, <em>Annual Report 2025</em> and published outcomes of the Consultative Committee and Executive Board, for portfolio and approval figures.</li>
+    </ol>
+  </section>
+
+  <section class="doc">
+    <span class="secno">8</span>
+    <h2>Limitations</h2>
+    <ol class="num">
+      <li>Determinations rest entirely on information entered by the applicant and are not verified. In-depth due diligence forms part of the CFC's approval process and is not substituted here.</li>
+      <li>Criteria reflect the 29th Call for Proposals as published. The terms of the 30th Call, once issued, would need to be reflected before any operational use.</li>
+      <li>The Call for Proposals page states a maximum of USD 1.5 million for regular projects, while the instrument table in the application form shows ranges extending to USD 2,000,000. Requests falling between the two figures are reported as review items rather than failures. Reconciling the two documents would remove an avoidable source of applicant uncertainty.</li>
+      <li>The reasonableness test available under the Exclusion List is a matter of judgement reserved to the Secretariat. Where an exclusion is engaged, this tool reports it and does not attempt to apply that test.</li>
+      <li>No eligibility rule is encoded where the published sources are silent. Screening criteria applied internally by the Secretariat beyond those published are therefore not represented.</li>
+      <li>Operational deployment would require confirmation of every encoded rule by the Secretariat, hosting consistent with the CFC's data protection arrangements, and a defined process for maintaining the rule register as calls are issued.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>Prepared independently by Zuhair Mahmud, Amsterdam. Not affiliated with or endorsed by the Common Fund for Commodities. All screening is performed locally in the browser; no information entered is transmitted, stored or retained.</p>
+    <p>Document PSE-1.0, 23 November 2026.</p>
+  </footer>
+</div>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var MEMBERS=["Afghanistan","Algeria","Angola","Argentina","Bangladesh","Benin","Bhutan","Botswana","Brazil","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cameroon","Central African Republic","Chad","China","Colombia","Comoros","Congo","Costa Rica","Côte d'Ivoire","Cuba","Democratic People's Republic of Korea","Democratic Republic of the Congo","Denmark","Djibouti","Ecuador","Egypt","Equatorial Guinea","Eswatini","Ethiopia","Finland","Gabon","Gambia","Germany","Ghana","Greece","Guatemala","Guinea","Guinea-Bissau","Haiti","Honduras","India","Indonesia","Iraq","Ireland","Italy","Jamaica","Kenya","Kuwait","Lao People's Democratic Republic","Lesotho","Madagascar","Malawi","Malaysia","Maldives","Mali","Mauritania","Mexico","Morocco","Mozambique","Myanmar","Nepal","Netherlands","Nicaragua","Niger","Nigeria","Norway","Pakistan","Papua New Guinea","Peru","Philippines","Portugal","Republic of Korea","Russian Federation","Rwanda","Samoa","Sao Tome and Principe","Saudi Arabia","Senegal","Sierra Leone","Singapore","Somalia","Spain","Sri Lanka","Sudan","Sweden","Syrian Arab Republic","Thailand","Togo","Trinidad and Tobago","Tunisia","Uganda","United Arab Emirates","United Kingdom of Great Britain and Northern Ireland","United Republic of Tanzania","Venezuela (Bolivarian Republic of)","Yemen","Zambia","Zimbabwe"];
+
+var STEPS=["4.1 Location","4.2 Applicant","4.3 Mandate","4.4 Financing","4.5 Documents","5 Determination"];
+var N=6,cur=0;
+var $=function(s){return document.querySelector(s)};
+var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+["#implCountry","#domCountry"].forEach(function(sel){
+  var el=$(sel),f=document.createDocumentFragment();
+  MEMBERS.forEach(function(c){var o=document.createElement("option");o.value=c;o.textContent=c;f.appendChild(o)});
+  var o2=document.createElement("option");o2.value="__NON__";o2.textContent="Country not listed above";f.appendChild(o2);
+  el.appendChild(f);
+});
+
+var prog=$("#prog");
+STEPS.forEach(function(s,i){var sp=document.createElement("span");sp.textContent=s;sp.dataset.i=i;prog.appendChild(sp)});
+
+function paint(){
+  $$("#prog span").forEach(function(sp){
+    var i=+sp.dataset.i;
+    sp.className=i<cur?"done":i===cur?"now":"";
+  });
+}
+function show(n){
+  cur=Math.max(0,Math.min(N-1,n));
+  $$(".step").forEach(function(s){s.classList.toggle("hide",+s.dataset.step!==cur)});
+  paint();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+$$("[data-go]").forEach(function(b){b.addEventListener("click",function(){show(+b.dataset.go)})});
+
+function wire(rootSel,noneId){
+  var root=$(rootSel);
+  root.addEventListener("change",function(e){
+    var box=e.target;
+    if(box.type!=="checkbox")return;
+    if(noneId&&box.id===noneId&&box.checked){
+      root.querySelectorAll('input[type=checkbox]').forEach(function(o){if(o.id!==noneId)o.checked=false});
+    }else if(noneId&&box.checked){
+      var none=document.getElementById(noneId);if(none)none.checked=false;
+    }
+    root.querySelectorAll(".opt").forEach(function(c){c.classList.toggle("sel",c.querySelector("input").checked)});
+  });
+}
+wire("#mandate","mandateNone");wire("#excl","exclNone");wire("#req",null);wire("#rec",null);
+
+function picked(sel){
+  return $$(sel+" input[type=checkbox]:checked").map(function(b){return b.value}).filter(function(v){return v!=="none"});
+}
+function num(sel){var v=parseFloat($(sel).value);return isFinite(v)?v:null}
+function usd(n){return n===null?"not stated":"USD "+n.toLocaleString("en-US")}
+
+function screen(){
+  var impl=$("#implCountry").value,dom=$("#domCountry").value,orgType=$("#orgType").value,
+      years=num("#years"),audited=$("#audited").value,vc=$("#valueChain").value,
+      mandate=picked("#mandate"),excl=picked("#excl"),ask=num("#askAmt"),total=num("#totalAmt"),
+      instr=$("#instrument").value,req=picked("#req"),english=$("#english").value;
+
+  var R=[];
+  function add(st,id,head,detail,basis){R.push({st:st,id:id,head:head,detail:detail,basis:basis})}
+
+  if(!impl){
+    add("ns","ELG-01","Location of implementation","Not stated. This is the first criterion applied on receipt of an application.","Member States list");
+  }else if(impl==="__NON__"){
+    add("notmet","ELG-01","Location of implementation","The country of implementation is not a Member State. Activities financed by the CFC must be implemented in a Member State, and the proposal cannot be financed as presented.","Member States list; Call for Proposals FAQ");
+  }else{
+    add("met","ELG-01","Location of implementation",impl+" is a Member State of the CFC.","Member States list, 101 Member States");
+  }
+
+  if(!dom){
+    add("ns","ELG-02","Applicant domicile","Country of registration not stated.","Call for Proposals FAQ");
+  }else if(dom==="__NON__"&&impl&&impl!=="__NON__"){
+    add("met","ELG-02","Applicant domicile","Registered outside the membership. This is permitted where all activities financed by the CFC are implemented in a Member State, in this case "+impl+". Confirmation would be sought at due diligence.","Call for Proposals FAQ");
+  }else if(dom==="__NON__"){
+    add("ns","ELG-02","Applicant domicile","Registered outside the membership. Whether this is permitted depends on the country of implementation, which is not established.","Call for Proposals FAQ");
+  }else{
+    add("met","ELG-02","Applicant domicile",dom+" is a Member State of the CFC.","Member States list");
+  }
+
+  if(years===null){
+    add("ns","TRK-01","Track record","Completed years of operation not stated.","Call for Proposals FAQ");
+  }else if(years<3){
+    add("notmet","TRK-01","Track record","The applicant reports "+years+" completed year"+(years===1?"":"s")+" of operation. Start-up companies are not financed and eligible proposals must demonstrate a track record of at least three years.","Call for Proposals FAQ");
+  }else{
+    add("met","TRK-01","Track record",years+" completed years of operation, satisfying the three-year minimum.","Call for Proposals FAQ");
+  }
+
+  if(audited==="no"){
+    add("notmet","TRK-02","Audited financial statements","No audited financial statements are available. A credible historical period of operations evidenced by audited statements underpins the track record requirement, and three financial years are required under Section 8.1.","Application form, Section 8.1");
+  }else if(audited==="partial"){
+    add("review","TRK-02","Audited financial statements","Fewer than three audited financial years are available. Section 8.1 requires the latest three, and the application would be screened as incomplete absent an explanation.","Application form, Section 8.1");
+  }else if(audited==="yes"){
+    add("met","TRK-02","Audited financial statements","Audited statements available for the latest three financial years.","Application form, Section 8.1");
+  }else{
+    add("ns","TRK-02","Audited financial statements","Availability of audited financial statements not stated.","Application form, Section 8.1");
+  }
+
+  if(mandate.length){
+    add("notmet","MAN-01","Mandate","The principal purpose of the project falls outside the mandate, being "+mandate.join(", ")+". Such matters are addressed by other international organisations.","Call for Proposals FAQ");
+  }else{
+    add("met","MAN-01","Mandate","No purpose outside the mandate was identified.","Call for Proposals FAQ");
+  }
+
+  if(vc==="no"){
+    add("notmet","MAN-02","Value chain position","The project is not positioned in a commodity or agricultural value chain. The purpose of the CFC is to advance development in commodity-dependent developing countries.","Call for Proposals");
+  }else if(vc==="finance"){
+    add("met","MAN-02","Value chain position","Provision of finance or inputs to commodity value chain actors. Activities of this kind are represented in the CFC portfolio.","Call for Proposals; portfolio composition");
+  }else if(vc==="yes"){
+    add("met","MAN-02","Value chain position","Commercial activity within a commodity value chain.","Call for Proposals");
+  }else{
+    add("ns","MAN-02","Value chain position","Position in the value chain not stated.","Call for Proposals");
+  }
+
+  if(excl.length){
+    add("notmet","EXC-01","Exclusion List","The proposal engages the Exclusion List in respect of "+excl.join("; ")+". A reasonableness test is available where development impact is significant and country circumstances require adjustment, but its application is reserved to the Secretariat.","CFC Exclusion List; Sustainability Policy, Annex I");
+  }else{
+    add("met","EXC-01","Exclusion List","No item among the eleven on the Exclusion List was engaged.","CFC Exclusion List; Sustainability Policy, Annex I");
+  }
+
+  var track=null;
+  if(ask===null){
+    add("ns","FIN-01","Amount and approval track","Amount requested not stated.","Call for Proposals FAQ");
+  }else if(ask<50000){
+    add("review","FIN-01","Amount and approval track",usd(ask)+" falls below the USD 50,000 lower bound of the Fast-Track range and is likely to be too small for the instruments available.","Application form instrument table");
+  }else if(ask<=300000){
+    track="Fast-Track";
+    add("met","FIN-01","Amount and approval track",usd(ask)+" falls within the Fast-Track procedure, a simplified approval route for requests below USD 300,000.","Call for Proposals FAQ; application form");
+  }else if(ask<=1500000){
+    track="Regular";
+    add("met","FIN-01","Amount and approval track",usd(ask)+" falls within the published maximum of USD 1.5 million for regular projects.","Call for Proposals FAQ");
+  }else if(ask<=2000000){
+    track="Regular, above published maximum";
+    add("review","FIN-01","Amount and approval track",usd(ask)+" exceeds the USD 1.5 million stated on the Call for Proposals page but falls within the instrument ranges published in the application form, which extend to USD 2,000,000. Flexibility is indicated for projects of higher impact supported by a sound case of finance. See Limitation 3.","Call for Proposals FAQ; application form instrument table");
+  }else{
+    add("review","FIN-01","Amount and approval track",usd(ask)+" exceeds both the published maximum and the upper bound of the instrument ranges. A request of this size would require restructuring or a different CFC vehicle.","Call for Proposals FAQ; application form instrument table");
+  }
+
+  if(ask!==null&&total!==null&&total>0){
+    var sh=ask/total;
+    if(sh>0.5+1e-9){
+      add("review","FIN-02","Co-financing","The request represents "+Math.round(sh*100)+" per cent of a project cost of "+usd(total)+". The amount requested should be matched by at least an equal amount of co-financing, indicating a requirement of approximately "+usd(Math.round(ask))+" against this request.","Application form");
+    }else{
+      add("met","FIN-02","Co-financing","The request represents "+Math.round(sh*100)+" per cent of a project cost of "+usd(total)+", within the matched co-financing requirement.","Application form");
+    }
+  }else{
+    add("ns","FIN-02","Co-financing","The co-financing test cannot be applied: "+(ask===null?"neither the amount requested nor":"the")+" total project cost is stated.","Application form");
+  }
+
+  if(instr==="equity"){
+    if(orgType==="Investment fund"){
+      add("met","FIN-03","Instrument","Equity is available to investment funds, to a maximum ownership share of 49 per cent.","Application form instrument table");
+    }else{
+      add("notmet","FIN-03","Instrument","Equity is available to investment funds only, and the CFC does not invest directly into businesses. A debt instrument would be the applicable route for this organisation type.","Application form instrument table");
+    }
+  }else if(instr==="unsure"||!instr){
+    add("ns","FIN-03","Instrument","Instrument not yet determined. An indicative instrument is set out at Section 5.2.","Application form instrument table");
+  }else{
+    add("met","FIN-03","Instrument","The instrument selected is available under the published terms.","Application form instrument table");
+  }
+
+  if(req.length===5){
+    add("met","DOC-01","Section 8.1 completeness","All five required documents are available. The application would satisfy the completeness screen.","Application form, Section 8.1");
+  }else if(req.length===0){
+    add("notmet","DOC-01","Section 8.1 completeness","None of the five required documents is confirmed. An application form submitted without the Section 8.1 documents is incomplete.","Application form, Section 8.1");
+  }else{
+    add("review","DOC-01","Section 8.1 completeness",(5-req.length)+" of the five required documents remain outstanding. An application form submitted without them is incomplete.","Application form, Section 8.1");
+  }
+
+  if(english==="no"){
+    add("review","ADM-01","Language","The application form and the Balance Sheet and Income Statement may be submitted in English only. Translation would be required before submission.","Call for Proposals");
+  }else if(english==="yes"){
+    add("met","ADM-01","Language","Submission in English confirmed.","Call for Proposals");
+  }else{
+    add("ns","ADM-01","Language","Capacity to submit in English not stated.","Call for Proposals");
+  }
+
+  return {R:R,track:track,ask:ask,total:total,instr:instr,orgType:orgType,impl:impl,dom:dom,years:years,req:req,rec:picked("#rec"),excl:excl,mandate:mandate};
+}
+
+function instrTable(r){
+  var rows=[
+    ["trade","Trade finance","300,000 to 2,000,000","Maximum 12 months, annually renewable to 5 years"],
+    ["wc","Working capital","300,000 to 2,000,000","Maximum 18 months, annually renewable to 5 years"],
+    ["term","Term loan","300,000 to 2,000,000","Maximum 5 years, grace period to 2 years"],
+    ["equity","Equity, investment funds only","300,000 to 2,000,000","Maximum 49 per cent ownership share"],
+    ["dib","Development Impact Bond","300,000 to 2,000,000","CFC participates as investor"],
+    ["ft","Fast-Track loan","50,000 to 300,000","Simplified approval procedure"]
+  ];
+  var pick=r.instr&&r.instr!=="unsure"?r.instr:(r.ask!==null&&r.ask<=300000?"ft":"term");
+  var h='<span class="secno">5.2</span><h2>Instrument and approval track</h2>'
+   +'<p class="q" style="margin-bottom:0">Ranges as published in the application form instrument table. Amounts in USD. The row applicable to this request is marked.</p>'
+   +'<table><caption>Table 2 &mdash; Published instruments</caption><thead><tr><th>Instrument</th><th>Range</th><th>Terms</th></tr></thead><tbody>';
+  rows.forEach(function(x){
+    h+='<tr class="'+(x[0]===pick?"on":"")+'"><td>'+x[1]+'</td><td class="fig">'+x[2]+'</td><td>'+x[3]+'</td></tr>';
+  });
+  h+='</tbody></table>';
+  if(r.track){
+    h+='<p class="small" style="margin-top:14px"><strong>Approval track.</strong> '+r.track
+      +(r.track==="Fast-Track"?". A simplified approval procedure applies to requests below USD 300,000."
+        :". Full appraisal through the Consultative Committee and the Executive Board.")+'</p>';
+  }
+  var all=["Audited financial statements, latest three financial years","Financial projections including balance sheet and profit and loss forecast","Impact indicators on the CFC template","Company registration documents","Legal ownership chart for group entities"];
+  h+='<h3 style="margin-top:26px">Document position</h3><table><caption>Table 3 &mdash; Section 8.1 required documents</caption><thead><tr><th>Ref</th><th>Document</th><th style="text-align:right">Status</th></tr></thead><tbody>';
+  all.forEach(function(d,i){
+    var has=r.req.indexOf(d)>-1;
+    h+='<tr><td class="id">8.1.'+(i+1)+'</td><td>'+d+'</td><td class="fs '+(has?"met":"notmet")+'" style="border-bottom:1px solid var(--rule-l);padding:9px 0">'+(has?"Available":"Outstanding")+'</td></tr>';
+  });
+  h+='</tbody></table>';
+  return h;
+}
+
+function render(){
+  var r=screen();
+  var no=r.R.filter(function(x){return x.st==="notmet"}),
+      rv=r.R.filter(function(x){return x.st==="review"}),
+      ns=r.R.filter(function(x){return x.st==="ns"}),
+      me=r.R.filter(function(x){return x.st==="met"});
+
+  var cls,st,head,txt;
+  if(no.length){
+    cls="n";st="Does not meet published criteria";
+    head=no.length===1?"One criterion is not met":no.length+" criteria are not met";
+    txt="On the information provided, the proposal would not satisfy the basic criteria applied by the Secretariat on receipt. The criteria concerned are identified at Section 5.1. Where a criterion is capable of being changed, including the country of implementation, the instrument sought or the documents held, a further screening may produce a different determination.";
+  }else if(rv.length||ns.length){
+    cls="r";st="Meets published criteria, subject to review";
+    var n2=rv.length+ns.length;
+    head=n2===1?"Criteria met, one item for review":"Criteria met, "+n2+" items for review";
+    txt="No criterion was found not to be met. The items identified at Section 5.1 are those that the Secretariat would be expected to question, or that remain unstated or incomplete. Resolving them before submission is preferable to addressing them during screening.";
+  }else{
+    cls="m";st="Meets published criteria";
+    head="All encoded criteria are met";
+    txt="The proposal satisfies each of the twelve criteria encoded at Table 1. Eligibility is not approval: commercial viability, impact, credit risk, and social and environmental performance are assessed separately, and in-depth due diligence forms part of the CFC's approval process.";
+  }
+
+  $("#det").innerHTML='<div class="det '+cls+'"><span class="eyebrow">Determination</span>'
+    +'<div class="st">'+st+'</div><h2>'+head+'</h2><p>'+txt+'</p>'
+    +'<dl class="tally"><div><dt>Criteria met</dt><dd>'+me.length+'</dd></div>'
+    +'<div><dt>Not met</dt><dd>'+no.length+'</dd></div>'
+    +'<div><dt>For review</dt><dd>'+rv.length+'</dd></div>'
+    +'<div><dt>Not stated</dt><dd>'+ns.length+'</dd></div>'
+    +'<div><dt>Total assessed</dt><dd>'+r.R.length+'</dd></div></dl></div>';
+
+  var lab={met:"Met",notmet:"Not met",review:"Review",ns:"Not stated"};
+  var f="";
+  r.R.forEach(function(x){
+    f+='<div class="f"><div class="fid">'+x.id+'</div><div><div class="fh">'+x.head+'</div>'
+      +'<p class="fd">'+x.detail+'</p><p class="fb">Source: '+x.basis+'</p></div>'
+      +'<div class="fs '+x.st+'">'+lab[x.st]+'</div></div>';
+  });
+  $("#find").innerHTML=f;
+  $("#instrSec").innerHTML=instrTable(r);
+
+  var ref="PSE-R-"+new Date().getFullYear()+"-"+Math.abs(
+    (String(r.impl)+String(r.orgType)+String(r.ask)+String(r.years)).split("")
+      .reduce(function(a,c){return (a*31+c.charCodeAt(0))|0},7)
+  ).toString(36).toUpperCase().slice(0,6);
+
+  var pad=function(s,n){s=String(s);return s+Array(Math.max(1,n-s.length+1)).join(" ")};
+  var L=[];
+  L.push("PRE-SUBMISSION ELIGIBILITY SCREENING RECORD");
+  L.push("Common Fund for Commodities, Call for Proposals");
+  L.push("");
+  L.push(pad("Record reference",24)+ref);
+  L.push(pad("Screened at",24)+new Date().toISOString().slice(0,16).replace("T"," ")+" UTC");
+  L.push(pad("Instrument of screening",24)+"Document PSE-1.0");
+  L.push(pad("Rules current as at",24)+"23 November 2026");
+  L.push("");
+  L.push("APPLICANT");
+  L.push(pad("  Implementation",24)+(r.impl==="__NON__"?"Non-member country":(r.impl||"not stated")));
+  L.push(pad("  Registered in",24)+(r.dom==="__NON__"?"Non-member country":(r.dom||"not stated")));
+  L.push(pad("  Organisation type",24)+(r.orgType||"not stated"));
+  L.push(pad("  Years of operation",24)+(r.years===null?"not stated":r.years));
+  L.push("");
+  L.push("REQUEST");
+  L.push(pad("  CFC financing sought",24)+usd(r.ask));
+  L.push(pad("  Total project cost",24)+usd(r.total));
+  L.push(pad("  CFC share",24)+(r.ask!==null&&r.total?Math.round(r.ask/r.total*100)+" per cent":"not computable"));
+  L.push(pad("  Approval track",24)+(r.track||"undetermined"));
+  L.push("");
+  L.push("OUTCOME");
+  L.push(pad("  Criteria met",24)+me.length+" of "+r.R.length);
+  L.push(pad("  Not met",24)+no.length);
+  L.push(pad("  For review",24)+rv.length);
+  L.push(pad("  Not stated",24)+ns.length);
+  L.push(pad("  Section 8.1 documents",24)+r.req.length+" of 5 available");
+  L.push(pad("  Section 8.2 documents",24)+r.rec.length+" of 5 available");
+  L.push(pad("  Exclusion List",24)+(r.excl.length?"Engaged: "+r.excl.join("; "):"Not engaged"));
+  L.push(pad("  Determination",24)+st);
+  if(no.length){
+    L.push("");L.push("CRITERIA NOT MET");
+    no.forEach(function(x){L.push("  "+pad(x.id,10)+x.head)});
+  }
+  if(rv.length){
+    L.push("");L.push("ITEMS FOR REVIEW");
+    rv.forEach(function(x){L.push("  "+pad(x.id,10)+x.head)});
+  }
+  if(ns.length){
+    L.push("");L.push("NOT STATED");
+    ns.forEach(function(x){L.push("  "+pad(x.id,10)+x.head)});
+  }
+  L.push("");
+  L.push("Eligibility screening only, against published criteria. Not a decision");
+  L.push("of the Common Fund for Commodities. Information entered is unverified.");
+  $("#record").textContent=L.join("\n");
+
+  show(5);
+}
+
+$("#runBtn").addEventListener("click",render);
+
+$("#copyBtn").addEventListener("click",function(){
+  var b=this,t=$("#record").textContent;
+  function done(ok){b.textContent=ok?"Copied":"Select and copy";setTimeout(function(){b.textContent="Copy record"},1800)}
+  try{navigator.clipboard.writeText(t).then(function(){done(true)},function(){done(false)})}
+  catch(e){
+    var s=window.getSelection(),g=document.createRange();
+    g.selectNodeContents($("#record"));s.removeAllRanges();s.addRange(g);done(false);
+  }
+});
+
+$("#resetBtn").addEventListener("click",function(){
+  $("#form").reset();
+  $$(".opt").forEach(function(c){c.classList.remove("sel")});
+  show(0);
+});
+
+show(0);
+})();
+</script>
+</body>
+</html>
